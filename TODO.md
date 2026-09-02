@@ -18,11 +18,13 @@ Living checklist for the marketing site. Newest priorities near the top of each 
 - [ ] Decide branded email for the domain — start with free forwarding (Cloudflare Email Routing) `hello@pathwaydistribution.ca` → Moulton inbox; upgrade to Google Workspace / M365 later if you want to reply as the domain.
 
 ## 🎨 Content & polish
-- [ ] **Social share image** (`og:image`, 1200×630) — right now shared links show no preview picture.
-- [ ] **Real logo vector** — replace the hand-built SVG mark (in `App.jsx` `<Mark/>`) and `public/favicon.svg` with the designer's final file.
-- [ ] **Brands section** — Tremco, Sika, Dryvit, Nichiha, Metalunic, Lux, … Start as text wordmarks; add real logos once permission/assets confirmed.
-- [ ] Real product / manufacturer content (what lines are carried).
-- [ ] Real coverage/territory info when available (section is currently honest but generic).
+- [ ] **Founder / Leadership block** — About section has the story + mission, but no people yet. Send name, short bio, (photo?) and I'll add a leadership block — important for a new distributor (people buy your relationships first).
+- [ ] **Brand Partners** — the section is a "announced soon" placeholder. Send the real lines (Tremco, Sika, Dryvit, Nichiha, Metalunic, Lux, …) + which you can display + logos, and I'll build real partner cards (logo, category, territory, contact).
+- [ ] **Proof** — once available: accounts opened, projects influenced, locations carrying product, manufacturer/dealer testimonials. Use only substantiable numbers.
+- [ ] **Social share image** (`og:image`, 1200×630) — shared links still show no preview picture.
+- [ ] **Real logo vector** — replace the hand-built SVG mark (`App.jsx` `<Mark/>`) and `public/favicon.svg` with the designer's final file.
+- [ ] Confirm **coverage** claim (Ontario now, "toward Canada") matches your actual plan.
+- [ ] Consider adding **"The Clear Path to Market."** as the primary line everywhere; "Building connections. Delivering solutions." kept as secondary (in hero-meta + footer).
 
 ## ⚙️ Infra (later)
 - [ ] Contact API is on Render free tier → ~30–50s cold start on first submit after idle. Upgrade if traffic warrants.
