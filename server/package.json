@@ -1,0 +1,16 @@
+{
+  "name": "pathway-contact-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Tiny contact-form endpoint for the Pathway Distribution site — emails submissions via Resend.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "resend": "^4.0.1"
+  }
+}

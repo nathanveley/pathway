@@ -359,6 +359,15 @@ export default function App() {
                 <label htmlFor="msg">Message</label>
                 <textarea id="msg" name="msg" placeholder="Tell us what you're carrying or looking for…" />
               </div>
+              {/* honeypot — hidden from humans, catches bots */}
+              <input
+                type="text"
+                name="company_website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+              />
               <button className="btn btn-primary" type="submit" style={{ justifyContent: 'center' }} disabled={sending}>
                 {sending ? 'Sending…' : 'Send it →'}
               </button>

@@ -1,12 +1,14 @@
-# Render Blueprint — deploys the marketing site as a static site.
-# Connect this repo in the Render dashboard (New > Blueprint) and it picks this up.
+# Render Blueprint — deploys the marketing site (static) and the contact API (web service).
+# Connect this repo in Render (New > Blueprint) and it picks this up.
 services:
+  # --- Marketing site (static) ---
   - type: web
     name: pathway-distribution
     runtime: static
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     envVars:
+      # URL of the contact API below, e.g. https://pathway-contact.onrender.com/api/contact
       - key: VITE_CONTACT_ENDPOINT
         sync: false
     routes:
@@ -21,3 +23,22 @@ services:
       - path: /*
         name: X-Content-Type-Options
         value: nosniff
+
+  # --- Contact form API (Node web service) ---
+  - type: web
+    name: pathway-contact
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm ci
+    startCommand: node index.js
+    healthCheckPath: /health
+    envVars:
+      - key: RESEND_API_KEY
+        sync: false
+      - key: TO_EMAIL
+        value: nathan.veley@themoultongroup.ca
+      - key: FROM_EMAIL
+        value: Pathway Distribution <notifications@pathwaydistribution.ca>
+      - key: ALLOWED_ORIGIN
+        value: https://pathwaydistribution.ca,https://www.pathwaydistribution.ca
