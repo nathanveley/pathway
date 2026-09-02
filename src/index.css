@@ -241,6 +241,12 @@ section{position:relative;padding:clamp(72px,11vh,140px) 0}
 .mission .label{color:var(--gold);font-size:12px}
 .mission-line{font-family:"Libre Franklin",sans-serif;font-weight:800;letter-spacing:-.01em;
   font-size:clamp(22px,3.2vw,32px);margin:10px 0 0;max-width:22ch;line-height:1.1}
+
+/* about + contact, two columns */
+.about-contact .ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,72px);align-items:start}
+.ac-contact h2{font-size:clamp(28px,4vw,42px)}
+.ac-contact .sub{color:var(--ink-soft);margin-top:16px;font-size:18px;max-width:42ch}
+.ac-contact form{margin-top:26px}
 .cover .stat-row{display:flex;gap:38px;margin-top:34px}
 .cover .stat b{font-family:"Libre Franklin",sans-serif;font-size:40px;color:var(--gold-deco);display:block}
 .cover .stat span{font-size:12px;letter-spacing:.1em;color:rgba(246,245,240,.6)}
@@ -291,7 +297,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .mobile-menu a{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.08em;
     text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:13px 4vw}
   .mobile-menu a:hover{color:var(--gold)}
-  .aud-grid,.pillars,.caps,.contact .wrap{grid-template-columns:1fr}
+  .aud-grid,.pillars,.caps,.contact .wrap,.about-contact .ac-grid{grid-template-columns:1fr}
   .hero-meta{flex-direction:column;gap:5px;align-items:flex-start;font-size:10px;bottom:20px}
 }
 @media (prefers-reduced-motion:reduce){

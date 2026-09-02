@@ -318,48 +318,42 @@ export default function App() {
           </div>
         </section>
 
-        {/* ABOUT */}
-        <section id="about">
-          <div className="wrap reveal">
-            <p className="eyebrow mono kicker">About Pathway</p>
-            <p className="lead-serif">Great products still need a pathway to market.</p>
-            <div className="about-body">
-              <p>
-                Pathway Distribution was created around a simple idea: manufacturers need more than a distributor, and
-                dealers need more than another supplier.
-              </p>
-              <p>
-                Manufacturers need people who understand their product, represent their brand and actively build demand.
-                Dealers need responsive partners who bring them strong products, market knowledge and real support.
-              </p>
-              <p>
-                Pathway connects the two. Through representation, distribution and market development, we help build
-                lasting relationships between manufacturers, dealers and the professionals who use their products
-                every day.
-              </p>
+        {/* ABOUT + CONTACT (two columns) */}
+        <section className="about-contact" id="about">
+          <div className="wrap reveal ac-grid">
+            <div className="ac-about">
+              <p className="eyebrow mono kicker">About Pathway</p>
+              <p className="lead-serif">Great products still need a pathway to market.</p>
+              <div className="about-body">
+                <p>
+                  Pathway Distribution was created around a simple idea: manufacturers need more than a distributor, and
+                  dealers need more than another supplier.
+                </p>
+                <p>
+                  Manufacturers need people who understand their product, represent their brand and actively build
+                  demand. Dealers need responsive partners who bring them strong products, market knowledge and real
+                  support.
+                </p>
+                <p>
+                  Pathway connects the two. Through representation, distribution and market development, we help build
+                  lasting relationships between manufacturers, dealers and the professionals who use their products
+                  every day.
+                </p>
+              </div>
+              <div className="mission">
+                <p className="label mono">Our mission</p>
+                <p className="mission-line">To create pathways that help our partners grow.</p>
+              </div>
             </div>
-            <div className="mission">
-              <p className="label mono">Our mission</p>
-              <p className="mission-line">To create pathways that help our partners grow.</p>
-            </div>
-          </div>
-        </section>
 
-        {/* CONTACT */}
-        <section className="contact" id="contact">
-          <div className="wrap reveal">
-            <div>
+            <div className="ac-contact" id="contact">
               <p className="eyebrow mono kicker">Let's talk</p>
               <h2>Find your pathway.</h2>
               <p className="sub">
                 Tell us which side of the market you're on and we'll map the way — whether you've got a product to grow
                 or a shelf to fill.
               </p>
-              <p className="mono" style={{ marginTop: 30, fontSize: 13, color: 'var(--slate)' }}>
-                We reply within one business day.
-              </p>
-            </div>
-            <form ref={formRef} onSubmit={handleSubmit}>
+              <form ref={formRef} onSubmit={handleSubmit}>
               <div className="field">
                 <label htmlFor="name">Name</label>
                 <input id="name" name="name" type="text" placeholder="Your name" required />
@@ -393,7 +387,9 @@ export default function App() {
               </button>
               <div className="toast mono" role="status">{toast}</div>
               <p className="form-note">We'll only use your details to reply — never shared.</p>
+              <p className="form-note">We reply within one business day.</p>
             </form>
+            </div>
           </div>
         </section>
       </main>
