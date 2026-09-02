@@ -45,7 +45,7 @@ function CloseIcon() {
 
 const NAV = [
   ['#serve', 'Who We Serve'],
-  ['#work', 'What We Do'],
+  ['#build', 'How We Work'],
   ['#advantage', 'The Advantage'],
   ['#brands', 'Partners'],
   ['#contact', 'Contact'],
@@ -206,7 +206,7 @@ export default function App() {
             <h2 className="section-h">Built for both sides of the market.</h2>
             <p className="section-intro">
               Pathway isn't a conventional wholesaler. We sit between the people who make building products and the
-              people who sell and install them — and we work for both.
+              people who sell or install them — dealers, suppliers and contractors alike — and we work every side of it.
             </p>
             <div className="aud-grid">
               <div className="aud">
@@ -221,45 +221,55 @@ export default function App() {
                 <a className="btn btn-ghost" style={{ marginTop: 26 }} href="#contact">Grow your line →</a>
               </div>
               <div className="aud">
-                <p className="cap mono">For Dealers &amp; Building Suppliers</p>
-                <h3>Better products. Better support. More opportunities.</h3>
+                <p className="cap mono">For Dealers, Suppliers &amp; Contractors</p>
+                <h3>Got a product problem? We source the solution.</h3>
+                <p className="aud-lead">A tricky spec, a hard-to-find material, a better option than what's on the shelf — we go find it and get it to you. Sourcing the right product for the job is the path we create.</p>
                 <ul>
-                  <li>Differentiated products that protect your margin</li>
+                  <li>Hard-to-find and better-fit products, sourced for the job</li>
                   <li>Reliable supply and competitive pricing</li>
                   <li>Training, quoting and real technical expertise</li>
-                  <li>A partner who actually answers the phone</li>
+                  <li>A partner who answers the phone — and supplies contractors direct when the job calls for it</li>
                 </ul>
-                <a className="btn btn-ghost" style={{ marginTop: 26 }} href="#contact">Carry our lines →</a>
+                <a className="btn btn-ghost" style={{ marginTop: 26 }} href="#contact">Bring us a challenge →</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* WHAT WE DO */}
-        <section id="work">
+        {/* HOW WE WORK */}
+        <section className="journey" id="build">
           <div className="wrap reveal">
-            <p className="eyebrow mono kicker">What we do</p>
-            <h2 className="section-h">Four ways we move product to market.</h2>
-            <div className="caps">
-              <div className="cap-card">
-                <p className="num mono">01</p>
-                <h3>Product Representation</h3>
-                <p>We represent your brand in the field like it's our own — the relationships, the pitch, the follow-through.</p>
+            <p className="eyebrow mono kicker">How we work</p>
+            <h2 className="section-h">Discover. Position. Connect. Grow.</h2>
+            <p className="intro">Four moves that take a manufacturer from market entry to lasting demand — each powered by one of our core capabilities.</p>
+            <div className="spine">
+              <div className="wp">
+                <div className="node">01</div>
+                <p className="wp-tag mono">Discover</p>
+                <span className="wp-cap mono">Market Development</span>
+                <h3>Understand the product and find the opening</h3>
+                <p>We learn the line and the category, then use market intelligence to find where it can win — and who it's for. When a contractor or builder has a problem, this is also where we source the right product to solve it.</p>
               </div>
-              <div className="cap-card">
-                <p className="num mono">02</p>
-                <h3>Distribution</h3>
-                <p>Inventory, logistics and fulfillment, so product is where the market needs it, when it needs it.</p>
+              <div className="wp">
+                <div className="node">02</div>
+                <p className="wp-tag mono">Position</p>
+                <span className="wp-cap mono">Product Representation</span>
+                <h3>Represent it, place it, price it</h3>
+                <p>We become the brand in the field — the right dealers, the right pricing strategy and the specification story that makes it land.</p>
               </div>
-              <div className="cap-card">
-                <p className="num mono">03</p>
-                <h3>Market Development</h3>
-                <p>Proactive demand-building — opening dealers, driving specification and growing the account base.</p>
+              <div className="wp">
+                <div className="node">03</div>
+                <p className="wp-tag mono">Connect</p>
+                <span className="wp-cap mono">Distribution</span>
+                <h3>Get it to market and in front of demand</h3>
+                <p>Inventory, logistics and fulfillment put product where it's needed — and in front of the contractors, specifiers and projects that pull it through.</p>
               </div>
-              <div className="cap-card">
-                <p className="num mono">04</p>
-                <h3>Technical &amp; Sales Support</h3>
-                <p>Training, quoting and product expertise that helps dealers and contractors confidently say yes.</p>
+              <div className="wp">
+                <div className="node">04</div>
+                <p className="wp-tag mono">Grow</p>
+                <span className="wp-cap mono">Technical &amp; Sales Support</span>
+                <h3>Turn first orders into lasting demand</h3>
+                <p>Training, quoting and product expertise keep dealers and contractors confident — building repeatable demand we expand from there.</p>
               </div>
             </div>
           </div>
@@ -280,41 +290,6 @@ export default function App() {
               <div className="adv-item"><b>Market intelligence</b><p>Where demand is — and how to reach it first.</p></div>
               <div className="adv-item"><b>Speed &amp; agility</b><p>Local decisions and fast answers, no head-office lag.</p></div>
               <div className="adv-item"><b>Hands-on execution</b><p>We go after the business — we don't wait for POs.</p></div>
-            </div>
-          </div>
-        </section>
-
-        {/* HOW WE BUILD A MARKET */}
-        <section className="journey" id="build">
-          <div className="wrap reveal">
-            <p className="eyebrow mono kicker">How we build a market</p>
-            <h2 className="section-h">Discover. Position. Connect. Grow.</h2>
-            <p className="intro">A manufacturer enters on one side; sustainable market demand comes out the other.</p>
-            <div className="spine">
-              <div className="wp">
-                <div className="node">01</div>
-                <p className="wp-tag mono">Discover</p>
-                <h3>Understand the product and where it wins</h3>
-                <p>We learn the line, the category and the openings — where it can compete and who it's for.</p>
-              </div>
-              <div className="wp">
-                <div className="node">02</div>
-                <p className="wp-tag mono">Position</p>
-                <h3>Place it with the right dealers and price</h3>
-                <p>We set the channel, the pricing strategy and the specification story so it lands with the right accounts.</p>
-              </div>
-              <div className="wp">
-                <div className="node">03</div>
-                <p className="wp-tag mono">Connect</p>
-                <h3>Put it in front of the demand</h3>
-                <p>We reach the contractors, specifiers and projects that pull product through the channel.</p>
-              </div>
-              <div className="wp">
-                <div className="node">04</div>
-                <p className="wp-tag mono">Grow</p>
-                <h3>Build lasting, repeatable demand</h3>
-                <p>We turn early wins into a durable market — then expand the footprint from there.</p>
-              </div>
             </div>
           </div>
         </section>
@@ -446,9 +421,9 @@ export default function App() {
               <div className="col">
                 <b>Explore</b>
                 <a href="#serve">Who We Serve</a>
-                <a href="#work">What We Do</a>
+                <a href="#build">How We Work</a>
                 <a href="#advantage">The Advantage</a>
-                <a href="#build">How We Build a Market</a>
+                <a href="#coverage">Coverage</a>
               </div>
               <div className="col">
                 <b>Connect</b>

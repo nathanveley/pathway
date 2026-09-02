@@ -179,6 +179,8 @@ section{position:relative;padding:clamp(72px,11vh,140px) 0}
   font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--gold);font-weight:600}
 .wp h3{font-size:22px;letter-spacing:.02em}
 .wp .wp-tag{font-size:11px;color:var(--slate);margin-bottom:6px}
+.wp .wp-cap{display:inline-block;font-size:9.5px;font-weight:600;letter-spacing:.12em;color:var(--gold);
+  border:1px solid var(--line-strong);border-radius:100px;padding:3px 11px;margin-bottom:11px}
 .wp p{margin:8px 0 0;color:var(--ink-soft);max-width:52ch}
 
 /* two audiences */
@@ -189,6 +191,7 @@ section{position:relative;padding:clamp(72px,11vh,140px) 0}
 .aud ul{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:14px}
 .aud li{position:relative;padding-left:26px;color:var(--ink-soft);font-size:16.5px;line-height:1.45}
 .aud li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:2px;background:var(--gold-deco)}
+.aud .aud-lead{color:var(--ink-soft);margin:12px 0 0;font-size:16px;line-height:1.5}
 
 /* why — 3 R's */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
