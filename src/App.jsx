@@ -279,31 +279,36 @@ export default function App() {
           </div>
         </section>
 
-        {/* THE PATHWAY ADVANTAGE */}
-        <section id="advantage">
+        {/* ADVANTAGE + BRAND PARTNERS (two columns) + brand bar */}
+        <section className="adv-partners" id="advantage">
           <div className="wrap reveal">
-            <p className="eyebrow mono kicker">The Pathway advantage</p>
-            <h2 className="adv-lead">We don't simply move products. We build markets for them.</h2>
-            <p className="adv-sub">
-              Pathway combines established relationships, market knowledge, sales representation and distribution to
-              build lasting demand — not just one-time orders. We go after the business; we don't wait for purchase
-              orders to appear.
-            </p>
-          </div>
-        </section>
-
-        {/* BRAND PARTNERS */}
-        <section id="brands">
-          <div className="wrap reveal">
-            <p className="eyebrow mono kicker">Our brand partners</p>
-            <h2 className="section-h">A growing roster of building-product lines.</h2>
-            <p className="section-intro">
-              We take on a focused set of manufacturers we believe in and build a real market for each — not a catalog
-              we blast to a list. Our roster is growing.
-            </p>
-            <div className="brands-panel">
-              <p className="brands-note mono">Brand partners announced soon</p>
-              <a className="btn btn-primary" href="#contact">Become a Pathway line →</a>
+            <div className="ap-grid">
+              <div className="ap-advantage">
+                <p className="eyebrow mono kicker">The Pathway advantage</p>
+                <h2 className="adv-lead">We don't simply move products. We build markets for them.</h2>
+                <p className="adv-sub">
+                  Pathway combines established relationships, market knowledge, sales representation and distribution to
+                  build lasting demand — not just one-time orders. We go after the business; we don't wait for purchase
+                  orders to appear.
+                </p>
+              </div>
+              <div className="ap-partners" id="brands">
+                <p className="eyebrow mono kicker">Our brand partners</p>
+                <h2 className="ap-partners-h">A growing roster of building-product lines.</h2>
+                <p className="ap-partners-copy">
+                  We take on a focused set of manufacturers we believe in and build a real market for each — not a
+                  catalog we blast to a list. Our roster is growing.
+                </p>
+                <a className="btn btn-primary" style={{ marginTop: 26 }} href="#contact">Become a Pathway line →</a>
+              </div>
+            </div>
+            <div className="brand-bar" aria-label="Brands we carry">
+              <span className="brand-wm">TREMCO</span>
+              <span className="brand-wm">SIKA</span>
+              <span className="brand-wm">DRYVIT</span>
+              <span className="brand-wm">NICHIHA</span>
+              <span className="brand-wm">METALUNIC</span>
+              <span className="brand-wm">LUX</span>
             </div>
           </div>
         </section>
