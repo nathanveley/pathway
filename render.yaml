@@ -1,0 +1,23 @@
+# Render Blueprint — deploys the marketing site as a static site.
+# Connect this repo in the Render dashboard (New > Blueprint) and it picks this up.
+services:
+  - type: web
+    name: pathway-distribution
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_CONTACT_ENDPOINT
+        sync: false
+    routes:
+      # SPA fallback so deep links resolve to index.html
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
