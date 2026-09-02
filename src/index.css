@@ -253,6 +253,7 @@ section{position:relative;padding:clamp(72px,11vh,140px) 0}
 .brand-wm{font-family:"Libre Franklin",sans-serif;font-weight:800;font-size:clamp(15px,1.8vw,21px);
   letter-spacing:.06em;color:var(--slate);opacity:.85;transition:opacity .2s,color .2s}
 .brand-wm:hover{opacity:1;color:var(--ink)}
+.brand-soon{color:var(--slate);font-size:12px}
 
 /* about */
 .about-body{margin-top:26px;display:flex;flex-direction:column;gap:18px}

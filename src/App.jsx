@@ -302,13 +302,8 @@ export default function App() {
                 <a className="btn btn-primary" style={{ marginTop: 26 }} href="#contact">Become a Pathway line →</a>
               </div>
             </div>
-            <div className="brand-bar" aria-label="Brands we carry">
-              <span className="brand-wm">TREMCO</span>
-              <span className="brand-wm">SIKA</span>
-              <span className="brand-wm">DRYVIT</span>
-              <span className="brand-wm">NICHIHA</span>
-              <span className="brand-wm">METALUNIC</span>
-              <span className="brand-wm">LUX</span>
+            <div className="brand-bar" aria-label="Brand partners">
+              <span className="brand-soon mono">Brand partners announced soon</span>
             </div>
           </div>
         </section>
