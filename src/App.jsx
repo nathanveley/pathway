@@ -281,16 +281,10 @@ export default function App() {
             <p className="eyebrow mono kicker">The Pathway advantage</p>
             <h2 className="adv-lead">We don't simply move products. We build markets for them.</h2>
             <p className="adv-sub">
-              Pathway combines industry relationships, market knowledge, sales representation and distribution to help
-              manufacturers build lasting demand — not just one-time orders.
+              Pathway combines established relationships, market knowledge, sales representation and distribution to
+              build lasting demand — not just one-time orders. We go after the business; we don't wait for purchase
+              orders to appear.
             </p>
-            <div className="adv-grid">
-              <div className="adv-item"><b>Established relationships</b><p>Trust already built across the building trade.</p></div>
-              <div className="adv-item"><b>Building-material expertise</b><p>We know the products and how they specify.</p></div>
-              <div className="adv-item"><b>Market intelligence</b><p>Where demand is — and how to reach it first.</p></div>
-              <div className="adv-item"><b>Speed &amp; agility</b><p>Local decisions and fast answers, no head-office lag.</p></div>
-              <div className="adv-item"><b>Hands-on execution</b><p>We go after the business — we don't wait for POs.</p></div>
-            </div>
           </div>
         </section>
 
