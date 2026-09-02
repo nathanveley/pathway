@@ -6,7 +6,7 @@ const {
   RESEND_API_KEY,
   TO_EMAIL = 'nathan.veley@themoultongroup.ca',
   FROM_EMAIL = 'Pathway Distribution <notifications@pathwaydistribution.ca>',
-  ALLOWED_ORIGIN = 'https://pathwaydistribution.ca',
+  ALLOWED_ORIGIN = 'https://pathwaydistribution.ca,https://www.pathwaydistribution.ca,https://pathway-distribution.onrender.com',
   PORT = 3001,
 } = process.env
 

@@ -258,7 +258,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:13px 4vw}
   .mobile-menu a:hover{color:var(--gold)}
   .aud-grid,.pillars,.contact .wrap{grid-template-columns:1fr}
-  .hero-meta{display:none}
+  .hero-meta{flex-direction:column;gap:5px;align-items:flex-start;font-size:10px;bottom:20px}
 }
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}

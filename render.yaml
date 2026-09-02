@@ -41,4 +41,4 @@ services:
       - key: FROM_EMAIL
         value: Pathway Distribution <notifications@pathwaydistribution.ca>
       - key: ALLOWED_ORIGIN
-        value: https://pathwaydistribution.ca,https://www.pathwaydistribution.ca
+        value: https://pathwaydistribution.ca,https://www.pathwaydistribution.ca,https://pathway-distribution.onrender.com
