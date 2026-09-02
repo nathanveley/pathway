@@ -379,6 +379,7 @@ export default function App() {
                 {sending ? 'Sending…' : 'Send it →'}
               </button>
               <div className="toast mono" role="status">{toast}</div>
+              <p className="form-note">We'll only use your details to reply — never shared.</p>
               {!CONTACT_ENDPOINT && (
                 <p className="form-note">
                   Email delivery isn't wired up yet — set <code>VITE_CONTACT_ENDPOINT</code> to route submissions to your inbox via Resend.
