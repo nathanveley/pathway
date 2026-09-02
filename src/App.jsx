@@ -27,11 +27,29 @@ function SunIcon() {
   )
 }
 
+function MenuIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
+  )
+}
+
 export default function App() {
   const [navSolid, setNavSolid] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [toast, setToast] = useState('')
   const [sending, setSending] = useState(false)
   const formRef = useRef(null)
+  const closeMenu = () => setMenuOpen(false)
 
   /* theme: read stored preference on mount */
   useEffect(() => {
@@ -97,7 +115,7 @@ export default function App() {
       setToast('✓ Thanks — we got it and will be in touch shortly.')
       formRef.current.reset()
     } catch {
-      setToast('Something went wrong. Please email hello@pathwaydistribution.ca directly.')
+      setToast('Something went wrong — please try again in a moment.')
     } finally {
       setSending(false)
     }
@@ -121,10 +139,29 @@ export default function App() {
             <a href="#why">Why Pathway</a>
             <a href="#contact">Contact</a>
           </nav>
-          <button className="toggle" onClick={toggleTheme} aria-label="Toggle light and dark theme">
-            <SunIcon />
-          </button>
+          <div className="nav-ctl">
+            <button className="toggle" onClick={toggleTheme} aria-label="Toggle light and dark theme">
+              <SunIcon />
+            </button>
+            <button
+              className="menu-btn"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label="Menu"
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <CloseIcon /> : <MenuIcon />}
+            </button>
+          </div>
         </div>
+        {menuOpen && (
+          <nav className="mobile-menu">
+            <a href="#journey" onClick={closeMenu}>The Journey</a>
+            <a href="#partners" onClick={closeMenu}>Partner</a>
+            <a href="#coverage" onClick={closeMenu}>Coverage</a>
+            <a href="#why" onClick={closeMenu}>Why Pathway</a>
+            <a href="#contact" onClick={closeMenu}>Contact</a>
+          </nav>
+        )}
       </header>
 
       <main id="top">
@@ -253,45 +290,15 @@ export default function App() {
 
         {/* COVERAGE */}
         <section className="cover" id="coverage">
-          <div className="wrap reveal">
-            <div>
-              <p className="eyebrow mono">Coverage</p>
-              <h2 className="section-h" style={{ marginTop: 16 }}>A network built to reach.</h2>
-              <p style={{ marginTop: 20 }}>
-                Our routes connect manufacturers to the commercial trade across the region — and the map keeps growing
-                as new lines and new accounts come aboard.
-              </p>
-              <div className="stat-row">
-                <div className="stat"><b>1</b><span className="mono">PARTNER, END TO END</span></div>
-                <div className="stat"><b>2</b><span className="mono">SIDES CONNECTED</span></div>
-                <div className="stat"><b>∞</b><span className="mono">ROOM TO GROW</span></div>
-              </div>
-            </div>
-            <div className="map">
-              <svg viewBox="0 0 560 340" aria-label="Stylized distribution network">
-                <g stroke="rgba(194,154,78,.5)" strokeWidth="1.4" strokeDasharray="4 6" fill="none">
-                  <path d="M90 250 C200 180 260 210 430 90" />
-                  <path d="M90 250 C160 260 300 300 470 240" />
-                  <path d="M430 90 C360 160 420 210 470 240" />
-                  <path d="M90 250 C180 130 280 120 430 90" />
-                  <path d="M250 300 C300 220 340 200 430 90" />
-                </g>
-                <g fill="var(--gold-deco)">
-                  <circle cx="90" cy="250" r="7" />
-                  <circle cx="430" cy="90" r="7" />
-                  <circle cx="470" cy="240" r="7" />
-                  <circle cx="250" cy="300" r="7" />
-                  <circle cx="300" cy="150" r="4.5" />
-                  <circle cx="360" cy="255" r="4.5" />
-                </g>
-                <g fill="rgba(246,245,240,.62)" fontFamily="'IBM Plex Mono',monospace" fontSize="11" letterSpacing="1">
-                  <text x="72" y="278">HUB</text>
-                  <text x="412" y="78">NORTH</text>
-                  <text x="452" y="266">EAST</text>
-                  <text x="232" y="322">SOUTH</text>
-                </g>
-              </svg>
-            </div>
+          <div className="wrap reveal cover-inner">
+            <p className="eyebrow mono">Coverage</p>
+            <h2 className="section-h" style={{ marginTop: 16 }}>A network built to reach.</h2>
+            <p className="cover-lead">
+              We connect manufacturers to the distributors, contractors and builders who put product to work — and the
+              network grows with every line we take on and every account we earn. Wherever the trade is building, we're
+              working to be the route that gets product there.
+            </p>
+            <div className="road-rule" aria-hidden="true" />
           </div>
         </section>
 
@@ -334,7 +341,7 @@ export default function App() {
                 you're headed and we'll map the way.
               </p>
               <p className="mono" style={{ marginTop: 30, fontSize: 13, color: 'var(--slate)' }}>
-                hello@pathwaydistribution.ca
+                We reply within one business day.
               </p>
             </div>
             <form ref={formRef} onSubmit={handleSubmit}>
