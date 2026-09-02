@@ -242,34 +242,38 @@ export default function App() {
             <p className="eyebrow mono kicker">How we work</p>
             <h2 className="section-h">Discover. Position. Connect. Grow.</h2>
             <p className="intro">Four moves that take a manufacturer from market entry to lasting demand — each powered by one of our core capabilities.</p>
-            <div className="spine">
-              <div className="wp">
-                <div className="node">01</div>
-                <p className="wp-tag mono">Discover</p>
-                <span className="wp-cap mono">Market Development</span>
-                <h3>Understand the product and find the opening</h3>
-                <p>We learn the line and the category, then use market intelligence to find where it can win — and who it's for. When a contractor or builder has a problem, this is also where we source the right product to solve it.</p>
-              </div>
-              <div className="wp">
-                <div className="node">02</div>
-                <p className="wp-tag mono">Position</p>
-                <span className="wp-cap mono">Product Representation</span>
-                <h3>Represent it, place it, price it</h3>
-                <p>We become the brand in the field — the right dealers, the right pricing strategy and the specification story that makes it land.</p>
-              </div>
-              <div className="wp">
-                <div className="node">03</div>
-                <p className="wp-tag mono">Connect</p>
-                <span className="wp-cap mono">Distribution</span>
-                <h3>Get it to market and in front of demand</h3>
-                <p>Inventory, logistics and fulfillment put product where it's needed — and in front of the contractors, specifiers and projects that pull it through.</p>
-              </div>
-              <div className="wp">
-                <div className="node">04</div>
-                <p className="wp-tag mono">Grow</p>
-                <span className="wp-cap mono">Technical &amp; Sales Support</span>
-                <h3>Turn first orders into lasting demand</h3>
-                <p>Training, quoting and product expertise keep dealers and contractors confident — building repeatable demand we expand from there.</p>
+            <div className="road-flow">
+              <svg className="road-map" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <path className="rm-road" d="M20 145 C90 145 95 140 150 140 C320 140 290 60 450 60 C620 60 590 140 750 140 C920 140 890 60 1050 60 C1120 60 1150 62 1185 62" />
+                <path className="rm-line" d="M20 145 C90 145 95 140 150 140 C320 140 290 60 450 60 C620 60 590 140 750 140 C920 140 890 60 1050 60 C1120 60 1150 62 1185 62" />
+                <g className="rm-node">
+                  <circle cx="150" cy="140" r="18" /><text x="150" y="145">1</text>
+                  <circle cx="450" cy="60" r="18" /><text x="450" y="65">2</text>
+                  <circle cx="750" cy="140" r="18" /><text x="750" y="145">3</text>
+                  <circle cx="1050" cy="60" r="18" /><text x="1050" y="65">4</text>
+                </g>
+              </svg>
+              <div className="stops">
+                <div className="stop">
+                  <p className="s-name">Discover</p>
+                  <span className="s-cap">Market Development</span>
+                  <p>We learn the product and the market and find where it can win — and source the right solution when a job needs one.</p>
+                </div>
+                <div className="stop">
+                  <p className="s-name">Position</p>
+                  <span className="s-cap">Product Representation</span>
+                  <p>We place it with the right dealers, pricing and specification story so it lands with the accounts that matter.</p>
+                </div>
+                <div className="stop">
+                  <p className="s-name">Connect</p>
+                  <span className="s-cap">Distribution</span>
+                  <p>Inventory and logistics put it in front of the contractors, specifiers and projects that pull it through.</p>
+                </div>
+                <div className="stop">
+                  <p className="s-name">Grow</p>
+                  <span className="s-cap">Technical &amp; Sales Support</span>
+                  <p>Training, quoting and expertise turn first orders into lasting, repeatable demand.</p>
+                </div>
               </div>
             </div>
           </div>

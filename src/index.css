@@ -214,6 +214,21 @@ section{position:relative;padding:clamp(72px,11vh,140px) 0}
 /* shared section intro */
 .section-intro{max-width:56ch;color:var(--ink-soft);margin-top:20px;font-size:19px}
 
+/* how we work — zig-zag road */
+.road-flow{margin-top:44px}
+.road-map{display:block;width:100%;height:auto;overflow:visible}
+.rm-road{fill:none;stroke:var(--road);stroke-width:22;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
+.rm-line{fill:none;stroke:var(--gold-deco);stroke-width:3;stroke-dasharray:10 14;stroke-linecap:round}
+.rm-node circle{fill:var(--paper);stroke:var(--gold-deco);stroke-width:2.5}
+.rm-node text{fill:var(--gold);font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600;text-anchor:middle}
+.stops{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:6px}
+.stop{display:flex;flex-direction:column}
+.stop .s-name{font-family:"Libre Franklin",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.01em;margin:0}
+.stop .s-cap{align-self:flex-start;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line-strong);
+  border-radius:100px;padding:3px 11px;margin:10px 0 12px}
+.stop p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.5}
+
 /* what we do — capability cards */
 .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px}
 .cap-card{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:34px 32px;box-shadow:var(--shadow)}
@@ -298,6 +313,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:13px 4vw}
   .mobile-menu a:hover{color:var(--gold)}
   .aud-grid,.pillars,.caps,.contact .wrap,.about-contact .ac-grid{grid-template-columns:1fr}
+  .road-map{display:none}
+  .stops{grid-template-columns:1fr;gap:24px;margin-top:26px}
+  .stop{border-left:2px solid var(--gold-deco);padding-left:20px}
   .hero-meta{flex-direction:column;gap:5px;align-items:flex-start;font-size:10px;bottom:20px}
 }
 @media (prefers-reduced-motion:reduce){
