@@ -43,6 +43,14 @@ function CloseIcon() {
   )
 }
 
+const NAV = [
+  ['#serve', 'Who We Serve'],
+  ['#work', 'What We Do'],
+  ['#advantage', 'The Advantage'],
+  ['#brands', 'Partners'],
+  ['#contact', 'Contact'],
+]
+
 export default function App() {
   const [navSolid, setNavSolid] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -51,7 +59,6 @@ export default function App() {
   const formRef = useRef(null)
   const closeMenu = () => setMenuOpen(false)
 
-  /* theme: read stored preference on mount */
   useEffect(() => {
     try {
       const saved = localStorage.getItem('pw-theme')
@@ -59,7 +66,6 @@ export default function App() {
     } catch { /* storage unavailable */ }
   }, [])
 
-  /* solidify nav on scroll */
   useEffect(() => {
     const onScroll = () => setNavSolid(window.scrollY > 40)
     onScroll()
@@ -67,7 +73,6 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* scroll-reveal */
   useEffect(() => {
     const els = document.querySelectorAll('.reveal')
     const io = new IntersectionObserver(
@@ -97,7 +102,6 @@ export default function App() {
   async function handleSubmit(e) {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(formRef.current).entries())
-
     if (!CONTACT_ENDPOINT) {
       setToast('✓ Thanks — message captured. (Email delivery not configured yet.)')
       formRef.current.reset()
@@ -133,11 +137,9 @@ export default function App() {
             </span>
           </a>
           <nav className="links">
-            <a href="#journey">The Journey</a>
-            <a href="#partners">Partner</a>
-            <a href="#coverage">Coverage</a>
-            <a href="#why">Why Pathway</a>
-            <a href="#contact">Contact</a>
+            {NAV.map(([href, label]) => (
+              <a key={href} href={href}>{label}</a>
+            ))}
           </nav>
           <div className="nav-ctl">
             <button className="toggle" onClick={toggleTheme} aria-label="Toggle light and dark theme">
@@ -155,11 +157,9 @@ export default function App() {
         </div>
         {menuOpen && (
           <nav className="mobile-menu">
-            <a href="#journey" onClick={closeMenu}>The Journey</a>
-            <a href="#partners" onClick={closeMenu}>Partner</a>
-            <a href="#coverage" onClick={closeMenu}>Coverage</a>
-            <a href="#why" onClick={closeMenu}>Why Pathway</a>
-            <a href="#contact" onClick={closeMenu}>Contact</a>
+            {NAV.map(([href, label]) => (
+              <a key={href} href={href} onClick={closeMenu}>{label}</a>
+            ))}
           </nav>
         )}
       </header>
@@ -180,19 +180,17 @@ export default function App() {
             <span className="ca-badge">
               <span className="leaf" aria-hidden="true">🍁</span> Proudly Canadian
             </span>
-            <p className="eyebrow mono">Commercial Distribution · Building Products</p>
+            <p className="eyebrow mono">Building-Product Representation &amp; Distribution · Canada</p>
             <h1 style={{ marginTop: 18 }}>
-              Building connections.
-              <br />
-              <span className="l2">Delivering solutions.</span>
+              The Clear Path <span className="l2">to Market.</span>
             </h1>
             <p className="lede">
-              Pathway Distribution moves proven product from the manufacturers who make it to the distributors,
-              contractors and builders who put it to work — one dependable partner for the whole route to market.
+              Pathway Distribution helps building-product manufacturers enter, develop and grow within the Canadian
+              market — through representation, distribution, dealer relationships and hands-on market development.
             </p>
             <div className="cta-row">
-              <a className="btn btn-primary" href="#contact">Partner with us →</a>
-              <a className="btn btn-ghost" href="#journey">See how it works</a>
+              <a className="btn btn-primary" href="#contact">Partner with Pathway →</a>
+              <a className="btn btn-ghost" href="#serve">Who we serve</a>
             </div>
           </div>
           <div className="wrap hero-meta mono">
@@ -201,89 +199,138 @@ export default function App() {
           </div>
         </section>
 
-        {/* STORY */}
-        <section id="story">
+        {/* WHO WE SERVE */}
+        <section id="serve">
           <div className="wrap reveal">
-            <p className="eyebrow mono kicker">The way, prepared</p>
-            <p className="lead-serif">
-              Every good product faces the same gap — the distance between the plant that makes it and the project
-              where it belongs. We exist to close that distance.
+            <p className="eyebrow mono kicker">Who we serve</p>
+            <h2 className="section-h">Built for both sides of the market.</h2>
+            <p className="section-intro">
+              Pathway isn't a conventional wholesaler. We sit between the people who make building products and the
+              people who sell and install them — and we work for both.
             </p>
-            <p style={{ maxWidth: '56ch', color: 'var(--ink-soft)', marginTop: 26, fontSize: 19 }}>
-              Distribution isn't just freight. It's knowing the distributors and contractors by name, understanding
-              what each market is building, and standing behind every line we carry. We prepare the way, so a
-              manufacturer can reach further and the trade can build with confidence.
-            </p>
-          </div>
-        </section>
-
-        {/* JOURNEY */}
-        <section className="journey" id="journey">
-          <div className="wrap reveal">
-            <p className="eyebrow mono kicker">The Journey</p>
-            <h2 className="section-h">From the plant floor to the jobsite.</h2>
-            <p className="intro">Three stages, one continuous route. This is how product travels with Pathway.</p>
-            <div className="spine">
-              <div className="wp">
-                <div className="node">01</div>
-                <p className="wp-tag mono">Source</p>
-                <h3>We know who makes what</h3>
-                <p>
-                  Supply problems rarely have one answer. Because we've built relationships across the manufacturers
-                  behind these lines, we can source the right solution for the job in front of you — not just the one
-                  product we happen to hold. Solving that is the expertise.
-                </p>
+            <div className="aud-grid">
+              <div className="aud">
+                <p className="cap mono">For Manufacturers</p>
+                <h3>You built the product. We build the market.</h3>
+                <ul>
+                  <li>Market entry and dealer adoption across Canada</li>
+                  <li>Brand representation and specification support</li>
+                  <li>Inventory, forecasting and logistics, handled</li>
+                  <li>Contractor pull-through that turns interest into orders</li>
+                </ul>
+                <a className="btn btn-ghost" style={{ marginTop: 26 }} href="#contact">Grow your line →</a>
               </div>
-              <div className="wp">
-                <div className="node">02</div>
-                <p className="wp-tag mono">Connect</p>
-                <h3>Relationships, built to last</h3>
-                <p>
-                  Distribution runs on trust. We know the distributors, contractors and specifiers by name, and we show
-                  up the same way on the tenth order as the first. The relationship is the real product.
-                </p>
-              </div>
-              <div className="wp">
-                <div className="node">03</div>
-                <p className="wp-tag mono">Deliver</p>
-                <h3>On time, in full, every order</h3>
-                <p>
-                  The promise that keeps a distributor reordering and a manufacturer growing. On a commercial project, a
-                  late delivery stalls the whole schedule — so we treat dependability like the product it is.
-                </p>
+              <div className="aud">
+                <p className="cap mono">For Dealers &amp; Building Suppliers</p>
+                <h3>Better products. Better support. More opportunities.</h3>
+                <ul>
+                  <li>Differentiated products that protect your margin</li>
+                  <li>Reliable supply and competitive pricing</li>
+                  <li>Training, quoting and real technical expertise</li>
+                  <li>A partner who actually answers the phone</li>
+                </ul>
+                <a className="btn btn-ghost" style={{ marginTop: 26 }} href="#contact">Carry our lines →</a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* TWO AUDIENCES */}
-        <section id="partners">
+        {/* WHAT WE DO */}
+        <section id="work">
           <div className="wrap reveal">
-            <p className="eyebrow mono kicker">Two sides, one partner</p>
-            <h2 className="section-h">Whichever side you're on, we're the connection.</h2>
-            <div className="aud-grid">
-              <div className="aud">
-                <p className="cap mono">For Manufacturers</p>
-                <h3>Your route to market</h3>
-                <ul>
-                  <li>Reach the distributors and contractors you'd never crack alone</li>
-                  <li>Skip the cost of building a sales &amp; logistics team</li>
-                  <li>Warehousing, order handling and jobsite delivery, covered</li>
-                  <li>A partner who represents your line like it's ours</li>
-                </ul>
-                <a className="btn btn-ghost" style={{ marginTop: 26 }} href="#contact">List your line →</a>
+            <p className="eyebrow mono kicker">What we do</p>
+            <h2 className="section-h">Four ways we move product to market.</h2>
+            <div className="caps">
+              <div className="cap-card">
+                <p className="num mono">01</p>
+                <h3>Product Representation</h3>
+                <p>We represent your brand in the field like it's our own — the relationships, the pitch, the follow-through.</p>
               </div>
-              <div className="aud">
-                <p className="cap mono">For Distributors &amp; Contractors</p>
-                <h3>Product you can stand behind</h3>
-                <ul>
-                  <li>A curated lineup, not an overwhelming catalog</li>
-                  <li>One reliable source instead of many loose ends</li>
-                  <li>Fast, predictable supply you can build a schedule around</li>
-                  <li>Reps who know the product and your market</li>
-                </ul>
-                <a className="btn btn-ghost" style={{ marginTop: 26 }} href="#contact">Stock with us →</a>
+              <div className="cap-card">
+                <p className="num mono">02</p>
+                <h3>Distribution</h3>
+                <p>Inventory, logistics and fulfillment, so product is where the market needs it, when it needs it.</p>
               </div>
+              <div className="cap-card">
+                <p className="num mono">03</p>
+                <h3>Market Development</h3>
+                <p>Proactive demand-building — opening dealers, driving specification and growing the account base.</p>
+              </div>
+              <div className="cap-card">
+                <p className="num mono">04</p>
+                <h3>Technical &amp; Sales Support</h3>
+                <p>Training, quoting and product expertise that helps dealers and contractors confidently say yes.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* THE PATHWAY ADVANTAGE */}
+        <section id="advantage">
+          <div className="wrap reveal">
+            <p className="eyebrow mono kicker">The Pathway advantage</p>
+            <h2 className="adv-lead">We don't simply move products. We build markets for them.</h2>
+            <p className="adv-sub">
+              Pathway combines industry relationships, market knowledge, sales representation and distribution to help
+              manufacturers build lasting demand — not just one-time orders.
+            </p>
+            <div className="adv-grid">
+              <div className="adv-item"><b>Established relationships</b><p>Trust already built across the building trade.</p></div>
+              <div className="adv-item"><b>Building-material expertise</b><p>We know the products and how they specify.</p></div>
+              <div className="adv-item"><b>Market intelligence</b><p>Where demand is — and how to reach it first.</p></div>
+              <div className="adv-item"><b>Speed &amp; agility</b><p>Local decisions and fast answers, no head-office lag.</p></div>
+              <div className="adv-item"><b>Hands-on execution</b><p>We go after the business — we don't wait for POs.</p></div>
+            </div>
+          </div>
+        </section>
+
+        {/* HOW WE BUILD A MARKET */}
+        <section className="journey" id="build">
+          <div className="wrap reveal">
+            <p className="eyebrow mono kicker">How we build a market</p>
+            <h2 className="section-h">Discover. Position. Connect. Grow.</h2>
+            <p className="intro">A manufacturer enters on one side; sustainable market demand comes out the other.</p>
+            <div className="spine">
+              <div className="wp">
+                <div className="node">01</div>
+                <p className="wp-tag mono">Discover</p>
+                <h3>Understand the product and where it wins</h3>
+                <p>We learn the line, the category and the openings — where it can compete and who it's for.</p>
+              </div>
+              <div className="wp">
+                <div className="node">02</div>
+                <p className="wp-tag mono">Position</p>
+                <h3>Place it with the right dealers and price</h3>
+                <p>We set the channel, the pricing strategy and the specification story so it lands with the right accounts.</p>
+              </div>
+              <div className="wp">
+                <div className="node">03</div>
+                <p className="wp-tag mono">Connect</p>
+                <h3>Put it in front of the demand</h3>
+                <p>We reach the contractors, specifiers and projects that pull product through the channel.</p>
+              </div>
+              <div className="wp">
+                <div className="node">04</div>
+                <p className="wp-tag mono">Grow</p>
+                <h3>Build lasting, repeatable demand</h3>
+                <p>We turn early wins into a durable market — then expand the footprint from there.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* BRAND PARTNERS */}
+        <section id="brands">
+          <div className="wrap reveal">
+            <p className="eyebrow mono kicker">Our brand partners</p>
+            <h2 className="section-h">A growing roster of building-product lines.</h2>
+            <p className="section-intro">
+              We take on a focused set of manufacturers we believe in and build a real market for each — not a catalog
+              we blast to a list. Our roster is growing.
+            </p>
+            <div className="brands-panel">
+              <p className="brands-note mono">Brand partners announced soon</p>
+              <a className="btn btn-primary" href="#contact">Become a Pathway line →</a>
             </div>
           </div>
         </section>
@@ -292,40 +339,39 @@ export default function App() {
         <section className="cover" id="coverage">
           <div className="wrap reveal cover-inner">
             <p className="eyebrow mono">Coverage</p>
-            <h2 className="section-h" style={{ marginTop: 16 }}>A network built to reach.</h2>
+            <h2 className="section-h" style={{ marginTop: 16 }}>Rooted in Ontario. Building toward Canada.</h2>
             <p className="cover-lead">
-              We connect manufacturers to the distributors, contractors and builders who put product to work — and the
-              network grows with every line we take on and every account we earn. Wherever the trade is building, we're
-              working to be the route that gets product there.
+              We're building the market from Ontario outward. Our footprint grows with every line we take on and every
+              dealer we earn — with a clear path toward national coverage. We'll always tell you exactly where we are,
+              never where we aren't yet.
             </p>
             <div className="road-rule" aria-hidden="true" />
           </div>
         </section>
 
-        {/* WHY */}
-        <section id="why">
+        {/* ABOUT */}
+        <section id="about">
           <div className="wrap reveal">
-            <p className="eyebrow mono kicker">Why Pathway</p>
-            <h2 className="section-h">The tagline, in practice.</h2>
-            <div className="pillars">
-              <div className="pillar">
-                <div className="n">01 · REACH</div>
-                <h3>We go where you can't</h3>
-                <p>
-                  Established relationships across the distribution landscape mean your product gets specified and
-                  stocked by the accounts that matter.
-                </p>
-              </div>
-              <div className="pillar">
-                <div className="n">02 · RELIABILITY</div>
-                <h3>The order shows up</h3>
-                <p>On time, in full, exactly as promised. It's the least glamorous part of the business and the one we obsess over.</p>
-              </div>
-              <div className="pillar">
-                <div className="n">03 · RELATIONSHIPS</div>
-                <h3>Names, not accounts</h3>
-                <p>We build connections that outlast any single order — the through-line that makes the whole route work.</p>
-              </div>
+            <p className="eyebrow mono kicker">About Pathway</p>
+            <p className="lead-serif">Great products still need a pathway to market.</p>
+            <div className="about-body">
+              <p>
+                Pathway Distribution was created around a simple idea: manufacturers need more than a distributor, and
+                dealers need more than another supplier.
+              </p>
+              <p>
+                Manufacturers need people who understand their product, represent their brand and actively build demand.
+                Dealers need responsive partners who bring them strong products, market knowledge and real support.
+              </p>
+              <p>
+                Pathway connects the two. Through representation, distribution and market development, we help build
+                lasting relationships between manufacturers, dealers and the professionals who use their products
+                every day.
+              </p>
+            </div>
+            <div className="mission">
+              <p className="label mono">Our mission</p>
+              <p className="mission-line">To create pathways that help our partners grow.</p>
             </div>
           </div>
         </section>
@@ -335,10 +381,10 @@ export default function App() {
           <div className="wrap reveal">
             <div>
               <p className="eyebrow mono kicker">Let's talk</p>
-              <h2>Let's build the connection.</h2>
+              <h2>Find your pathway.</h2>
               <p className="sub">
-                Whether you've got a product line that needs a route or a project you need supplied — tell us where
-                you're headed and we'll map the way.
+                Tell us which side of the market you're on and we'll map the way — whether you've got a product to grow
+                or a shelf to fill.
               </p>
               <p className="mono" style={{ marginTop: 30, fontSize: 13, color: 'var(--slate)' }}>
                 We reply within one business day.
@@ -355,18 +401,16 @@ export default function App() {
               </div>
               <div className="field">
                 <label htmlFor="role">I'm a…</label>
-                <select id="role" name="role" defaultValue="Manufacturer looking for distribution">
-                  <option>Manufacturer looking for distribution</option>
-                  <option>Distributor / dealer</option>
-                  <option>Contractor / builder</option>
-                  <option>Something else</option>
+                <select id="role" name="role" defaultValue="Manufacturer">
+                  <option>Manufacturer</option>
+                  <option>Dealer or contractor</option>
+                  <option>General inquiry</option>
                 </select>
               </div>
               <div className="field">
                 <label htmlFor="msg">Message</label>
-                <textarea id="msg" name="msg" placeholder="Tell us what you're carrying or looking for…" />
+                <textarea id="msg" name="msg" placeholder="Tell us about your product, your market or what you're looking for…" />
               </div>
-              {/* honeypot — hidden from humans, catches bots */}
               <input
                 type="text"
                 name="company_website"
@@ -380,11 +424,6 @@ export default function App() {
               </button>
               <div className="toast mono" role="status">{toast}</div>
               <p className="form-note">We'll only use your details to reply — never shared.</p>
-              {!CONTACT_ENDPOINT && (
-                <p className="form-note">
-                  Email delivery isn't wired up yet — set <code>VITE_CONTACT_ENDPOINT</code> to route submissions to your inbox via Resend.
-                </p>
-              )}
             </form>
           </div>
         </section>
@@ -401,23 +440,21 @@ export default function App() {
                   <span>DISTRIBUTION</span>
                 </span>
               </a>
-              <p className="foot-tag">
-                Building connections. <em>Delivering solutions.</em>
-              </p>
+              <p className="foot-tag">The Clear Path <em>to Market.</em></p>
             </div>
             <div className="foot-nav">
               <div className="col">
                 <b>Explore</b>
-                <a href="#journey">The Journey</a>
-                <a href="#partners">Partner With Us</a>
-                <a href="#coverage">Coverage</a>
-                <a href="#why">Why Pathway</a>
+                <a href="#serve">Who We Serve</a>
+                <a href="#work">What We Do</a>
+                <a href="#advantage">The Advantage</a>
+                <a href="#build">How We Build a Market</a>
               </div>
               <div className="col">
                 <b>Connect</b>
+                <a href="#brands">Brand Partners</a>
+                <a href="#about">About</a>
                 <a href="#contact">Contact</a>
-                <a href="#contact">List a Product</a>
-                <a href="#contact">Stock With Us</a>
               </div>
             </div>
           </div>
