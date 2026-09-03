@@ -341,8 +341,12 @@ export default function App() {
               <p className="lead-serif">Great products still need a pathway to market.</p>
               <div className="about-body">
                 <p>
-                  Pathway Distribution was created around a simple idea: manufacturers need more than a distributor, and
-                  dealers need more than another supplier.
+                  Pathway Distribution is an Ontario-based building-products distributor and manufacturer's
+                  representative, building markets across Canada.
+                </p>
+                <p>
+                  We were created around a simple idea: manufacturers need more than a distributor, and dealers need
+                  more than another supplier.
                 </p>
                 <p>
                   Manufacturers need people who understand their product, represent their brand and actively build
