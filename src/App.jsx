@@ -316,9 +316,6 @@ export default function App() {
                 <a className="btn btn-primary" style={{ marginTop: 26 }} href="#contact">Become a Pathway line →</a>
               </div>
             </div>
-            <div className="brand-bar" aria-label="Brand partners">
-              <span className="brand-soon mono">Brand partners announced soon</span>
-            </div>
           </div>
         </section>
 
