@@ -19,12 +19,18 @@ Living checklist for the marketing site. Newest priorities near the top of each 
 
 ## 🎨 Content & polish
 - [ ] **Founder / Leadership block** — About section has the story + mission, but no people yet. Send name, short bio, (photo?) and I'll add a leadership block — important for a new distributor (people buy your relationships first).
-- [ ] **Brand Partners** — the section is a "announced soon" placeholder. Send the real lines (Tremco, Sika, Dryvit, Nichiha, Metalunic, Lux, …) + which you can display + logos, and I'll build real partner cards (logo, category, territory, contact).
+- [ ] **Brand Partners** — bar shows an "announced soon" placeholder. Collect official logo files → `public/logos/` (see its README), confirm which lines Pathway actually represents, and I'll build the real logo bar.
 - [ ] **Proof** — once available: accounts opened, projects influenced, locations carrying product, manufacturer/dealer testimonials. Use only substantiable numbers.
-- [ ] **Social share image** (`og:image`, 1200×630) — shared links still show no preview picture.
-- [ ] **Real logo vector** — replace the hand-built SVG mark (`App.jsx` `<Mark/>`) and `public/favicon.svg` with the designer's final file.
+- [ ] **Real logo vector** — replace the hand-built SVG mark (`App.jsx` `<Mark/>`) and `public/favicon.svg` with the designer's final file (and regenerate `og.png` to match).
 - [ ] Confirm **coverage** claim (Ontario now, "toward Canada") matches your actual plan.
-- [ ] Consider adding **"The Clear Path to Market."** as the primary line everywhere; "Building connections. Delivering solutions." kept as secondary (in hero-meta + footer).
+
+## ✅ Done (overnight, 2026-09-02)
+- Repositioned to "The Clear Path to Market" + full section rework (Who We Serve, How We Work zig-zag road, Advantage, Brand Partners, Coverage, About+Contact two-column)
+- Fixed Coverage band unreadable in dark mode (fixed dark navy)
+- **Social share image** (`og:png`, 1200×630) + og/twitter meta
+- **Organization JSON-LD** structured data for SEO
+- **Theme-aware toggle icon** (moon in light, sun in dark)
+- Custom domain live w/ HTTPS; contact form → Resend → inbox
 
 ## ⚙️ Infra (later)
 - [ ] Contact API is on Render free tier → ~30–50s cold start on first submit after idle. Upgrade if traffic warrants.
