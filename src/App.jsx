@@ -326,8 +326,8 @@ export default function App() {
             <h2 className="section-h" style={{ marginTop: 16 }}>Rooted in Ontario. Building toward Canada.</h2>
             <p className="cover-lead">
               We're building the market from Ontario outward. Our footprint grows with every line we take on and every
-              dealer we earn — with a clear path toward national coverage. We'll always tell you exactly where we are,
-              never where we aren't yet.
+              dealer we earn — with a clear path toward national coverage. And we won't oversell our reach; we'll always
+              be straight about where we can serve you today.
             </p>
             <div className="road-rule" aria-hidden="true" />
           </div>
