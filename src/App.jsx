@@ -27,6 +27,14 @@ function SunIcon() {
   )
 }
 
+function MoonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+    </svg>
+  )
+}
+
 function MenuIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -54,16 +62,21 @@ const NAV = [
 export default function App() {
   const [navSolid, setNavSolid] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [dark, setDark] = useState(false)
   const [toast, setToast] = useState('')
   const [sending, setSending] = useState(false)
   const formRef = useRef(null)
   const closeMenu = () => setMenuOpen(false)
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem('pw-theme')
-      if (saved) document.documentElement.setAttribute('data-theme', saved)
-    } catch { /* storage unavailable */ }
+    let saved = null
+    try { saved = localStorage.getItem('pw-theme') } catch { /* storage unavailable */ }
+    if (saved) document.documentElement.setAttribute('data-theme', saved)
+    const mq = window.matchMedia('(prefers-color-scheme:dark)')
+    setDark(saved ? saved === 'dark' : mq.matches)
+    const onChange = (e) => { if (!document.documentElement.getAttribute('data-theme')) setDark(e.matches) }
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
   }, [])
 
   useEffect(() => {
@@ -97,6 +110,7 @@ export default function App() {
     const next = isDark ? 'light' : 'dark'
     root.setAttribute('data-theme', next)
     try { localStorage.setItem('pw-theme', next) } catch { /* storage unavailable */ }
+    setDark(next === 'dark')
   }
 
   async function handleSubmit(e) {
@@ -143,7 +157,7 @@ export default function App() {
           </nav>
           <div className="nav-ctl">
             <button className="toggle" onClick={toggleTheme} aria-label="Toggle light and dark theme">
-              <SunIcon />
+              {dark ? <SunIcon /> : <MoonIcon />}
             </button>
             <button
               className="menu-btn"
