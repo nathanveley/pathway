@@ -406,7 +406,7 @@ export default function App() {
               </button>
               <div className="toast mono" role="status">{toast}</div>
               <p className="form-note">We'll only use your details to reply — never shared.</p>
-              <p className="form-note">We reply within one business day.</p>
+              <p className="form-note">We reply within 48 hours.</p>
             </form>
             </div>
           </div>
